@@ -1,6 +1,6 @@
-
 //Criação do mini-projeto avaliativo para o curso de desenvolvedor Frontend React do SCTEC | SENAI
 // SoftSkills e HardSkills para vagas em geral em FrontEnd que serão selecionadas pela empresa.
+
 class SoftSkills {
   constructor() {
     this.softSkillsTecnologia = [
@@ -65,7 +65,8 @@ class HardSkills {
   }
 }
 
-//Criação da classe FrontendJunior que herda as SoftSkills e HardSkills para o cargo de FrontEnd Junior.
+//Criação da classe FrontendJunior que herda as SoftSkills para o cargo de FrontEnd Junior.
+
 class FrontendJunior extends SoftSkills {
   constructor() {
     super();
@@ -82,24 +83,19 @@ class FrontendJunior extends SoftSkills {
       "Resiliência",
       "Ética profissional"
     ];
-  }}
 
-class FrontendJunior extends HardSkills {
-  constructor() {
-    super();
-
- this.hardSkills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "Git",
-  "GitHub",
-  "Responsividade",
-  "Consumo de API",
-  "Manipulação de DOM",
-  "Versionamento de código"
-];
+    this.hardSkills = [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Git",
+      "GitHub",
+      "Responsividade",
+      "Consumo de API",
+      "Manipulação de DOM",
+      "Versionamento de código"
+    ];
   }
 }
 
@@ -128,7 +124,9 @@ class VagaFrontEnd extends Vaga {
   }
 }
 
-//Criação de uma vaga de FrontEnd Junior para realizar o match com o candidato. Usei as mesmas habilidades e requisitos do FrontEnd Junior para garantir o match perfeito, mas é possível criar vagas com diferentes habilidades e requisitos para testar o match parcial ou sem match.
+//Criação de uma vaga de FrontEnd Junior para realizar o match com o candidato. 
+//Usei as mesmas habilidades e requisitos do FrontEnd Junior para criar vagas com diferentes habilidades e requisitos para testar o match perfeito,  parcial ou sem match.
+
 const vagaFrontEnd = new VagaFrontEnd(
   "Tech Company",
   "Frontend Developer Junior",
@@ -162,95 +160,104 @@ const vagaFrontEnd = new VagaFrontEnd(
 );
 
 console.log("Vaga Front-End:", vagaFrontEnd);
-//Construí usando const para ilustrar a criação de uma vaga específica, mas é possível criar várias vagas com diferentes informações para testar o match com diferentes candidatos:
 
-//Agora irei construir as vagas com arrays para armazenar várias vagas e candidatos, e criar funções para realizar o match entre eles.
+//Construí usando const para ilustrar a criação de uma vaga específica, 
+//mas é possível criar várias vagas com diferentes informações para testar 
+//o match com diferentes candidatos.
+
+//Agora irei construir as vagas com arrays para armazenar várias vagas e candidatos, 
+//e criar funções para realizar o match entre eles.
 
 const vagas = [];
 
 vagas.push(vagaFrontEnd);
 
-new VagaFrontEnd(
-  "Emprea A",
-  "Frontend Developer Junior",
-  [
-    "Responsabilidade",
-    "Organização",
-    "Comunicação",
-    "Trabalho em equipe",
-    "Proatividade",
-    "Pontualidade",
-    "Aprendizagem rápida",
-   
-  ],
-  [
-    "JavaScript",
-    "React",
-    "Git",
-    "GitHub",
-    "Responsividade",
-    "Manipulação de DOM",
-    "Versionamento de código"
-  ],
-  3500,
-  "Híbrido",
-  "Junior"
-);
-new VagaFrontEnd(
-  "Empresa B",
-  "Frontend Developer Junior",
-  [
-    "Responsabilidade",
-    "Comunicação",
-    "Trabalho em equipe",
-    "Proatividade",
-    "Aprendizagem rápida",
-    "Flexibilidade",
-    "Ética profissional"
-  ],
-  [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Git",
-    "Responsividade",
-    "Consumo de API",
-    
-  ],
-  3200,
-  "Presencial",
-  "Junior"
+vagas.push(
+  new VagaFrontEnd(
+    "Empresa A",
+    "Frontend Developer Junior",
+    [
+      "Responsabilidade",
+      "Organização",
+      "Comunicação",
+      "Trabalho em equipe",
+      "Proatividade",
+      "Pontualidade",
+      "Aprendizagem rápida"
+    ],
+    [
+      "JavaScript",
+      "React",
+      "Git",
+      "GitHub",
+      "Responsividade",
+      "Manipulação de DOM",
+      "Versionamento de código"
+    ],
+    3500,
+    "Híbrido",
+    "Junior"
+  )
 );
 
-new VagaFrontEnd(
-  "Empresa C",
-  "Frontend Developer Junior",
-  [
-    "Organização",
-    "Comunicação",
-    "Proatividade",
-    "Pontualidade",
-    "Aprendizagem rápida",
-    "Flexibilidade",
-    "Resiliência",
-    "Ética profissional"
-  ],
-  [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Git",
-    "GitHub",
-    "Responsividade",
-    "Consumo de API",
-    "Manipulação de DOM",
-    "Versionamento de código"
-  ],
-  2800,
-  "Remoto",
-  "Junior"
+vagas.push(
+  new VagaFrontEnd(
+    "Empresa B",
+    "Frontend Developer Junior",
+    [
+      "Responsabilidade",
+      "Comunicação",
+      "Trabalho em equipe",
+      "Proatividade",
+      "Aprendizagem rápida",
+      "Flexibilidade",
+      "Ética profissional"
+    ],
+    [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Git",
+      "Responsividade",
+      "Consumo de API"
+    ],
+    3200,
+    "Presencial",
+    "Junior"
+  )
+);
+
+vagas.push(
+  new VagaFrontEnd(
+    "Empresa C",
+    "Frontend Developer Junior",
+    [
+      "Organização",
+      "Comunicação",
+      "Proatividade",
+      "Pontualidade",
+      "Aprendizagem rápida",
+      "Flexibilidade",
+      "Resiliência",
+      "Ética profissional"
+    ],
+    [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Git",
+      "GitHub",
+      "Responsividade",
+      "Consumo de API",
+      "Manipulação de DOM",
+      "Versionamento de código"
+    ],
+    2800,
+    "Remoto",
+    "Junior"
+  )
 );
 
 console.log("Vagas Disponíveis:", vagas);
@@ -260,6 +267,7 @@ console.log("Vagas Disponíveis:", vagas);
 class CandidatoFrontEnd extends FrontendJunior {
   constructor(nome, email, telefone, habilidades, requisitos) {
     super();
+
     this.nome = nome;
     this.email = email;
     this.telefone = telefone;
@@ -277,14 +285,16 @@ class CandidatoFrontEnd extends FrontendJunior {
     } else {
       this.matchHardSkills = false;
     }
-
+  }
 }
-}
 
-//Criação de candidatos fictícios para o console .log, algumas das mesmas habilidades e requisitos do FrontEnd Junior, candidatos com diferentes habilidades e requisitos para testar o match total, parcial ou sem match com as diferentes emnpresas e vagas criadas.
+//Criação de candidatos fictícios para o console.log.
+//Algumas das mesmas habilidades e requisitos do FrontEnd Junior.
+//Candidatos com diferentes habilidades e requisitos para testar o match total, parcial ou sem match com as diferentes empresas e vagas criadas.
+
 const candidato1 = new CandidatoFrontEnd(
   "João Silva",
-  'joao@qualquercoisa.comm',
+  "joao@qualquercoisa.com",
   "11999999999",
   [
     "Responsabilidade",
@@ -316,8 +326,8 @@ console.log("Candidato:", candidato1);
 
 const candidato2 = new CandidatoFrontEnd(
   "Maria Souza",
-  "4755555555" ,
-  "maria@casadabruxa.comm",
+  "maria@casadabruxa.com",
+  "4755555555",
   [
     "Comunicação",
     "Trabalho em equipe",
@@ -341,23 +351,22 @@ console.log("Candidato:", candidato2);
 
 const candidato3 = new CandidatoFrontEnd(
   "Carlos Oliveira",
-  "oliveira@bananeira.comm " ,
-    "11988888888" , 
-    
-    [ "Trabalho em equipe",
+  "oliveira@bananeira.com",
+  "11988888888",
+  [
+    "Trabalho em equipe",
     "Proatividade",
     "Pontualidade",
     "Aprendizagem rápida",
     "Flexibilidade",
-    "Resiliência",]
-
-    [
+    "Resiliência"
+  ],
+  [
     "HTML",
     "CSS",
     "JavaScript",
-    "React",
-    ]
+    "React"
+  ]
 );
 
 console.log("Candidato:", candidato3);
-
