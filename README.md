@@ -103,7 +103,7 @@ Agradecimento especial:
 
 * ao GitHub por eventualmente funcionar;
 * ao Copilot por evitar crises existenciais em tempo integral;
-* e ao ChatGPT por servir como terapeuta de JavaScript durante o desenvolvimento do projeto.
+* e ao ChatGPT por servir como terapeuta e suporte de JavaScript durante o desenvolvimento do projeto.
 
 ---
 
