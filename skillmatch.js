@@ -106,7 +106,7 @@ console.log("Frontend Junior:", frontendJunior);
 //Criação da classe Vaga que receberá as informações da vaga e do candidato para realizar o match.
 
 class Vaga {
-  constructor(empresa, cargo, habilidades, requisitos, salario, modalidade, nivel) {
+  constructor(empresa, cargo, habilidades, requisitos, salario, modalidade, nivel, minSoftSkills, minHardSkills) {
     this.empresa = empresa;
     this.cargo = cargo;
     this.softSkills = habilidades;
@@ -114,12 +114,14 @@ class Vaga {
     this.salario = salario;
     this.modalidade = modalidade;
     this.nivel = nivel;
+    this.minSoftSkills = minSoftSkills;
+    this.minHardSkills = minHardSkills;
   }
 }
 
 class VagaFrontEnd extends Vaga {
-  constructor(empresa, cargo, habilidades, requisitos, salario, modalidade, nivel) {
-    super(empresa, cargo, habilidades, requisitos, salario, modalidade, nivel);
+  constructor(empresa, cargo, habilidades, requisitos, salario, modalidade, nivel, minSoftSkills, minHardSkills) {
+    super(empresa, cargo, habilidades, requisitos, salario, modalidade, nivel, minSoftSkills, minHardSkills);
     this.area = "Front-End";
   }
 }
@@ -156,7 +158,9 @@ const vagaFrontEnd = new VagaFrontEnd(
   ],
   3000,
   "Remoto",
-  "Junior"
+  "Junior",
+  80,
+  70
 );
 
 console.log("Vaga Front-End:", vagaFrontEnd);
@@ -196,7 +200,9 @@ vagas.push(
     ],
     3500,
     "Híbrido",
-    "Junior"
+    "Junior",
+    80,
+    70
   )
 );
 
@@ -225,6 +231,8 @@ vagas.push(
     3200,
     "Presencial",
     "Junior"
+    75,
+    65
   )
 );
 
@@ -257,6 +265,8 @@ vagas.push(
     2800,
     "Remoto",
     "Junior"
+    60,
+    60
   )
 );
 
@@ -386,9 +396,13 @@ const calcularCompatibilidade = (candidato) => {
     const porcentagemHard =
       Math.round((requisitosIguais.length / vaga.hardSkills.length) * 100);
 
+      const aprovadoHard = porcentagemHard >= 70 ? true : false;
+
     console.log(
-      `${candidato.nome} possui ${porcentagemHard}% de compatibilidade em HardSkills com a empresa ${vaga.empresa}`
+      `${candidato.nome} possui ${porcentagemHard}% de compatibilidade em HardSkills com a empresa ${vaga.empresa}, candidato ${aprovadoHard ? "aprovado" : "reprovado"} para a entrevista da vaga de ${vaga.cargo}`
     );
+
+
 
     //Compatibilidade SoftSkills
 
@@ -399,8 +413,10 @@ const calcularCompatibilidade = (candidato) => {
     const porcentagemSoft =
       Math.round((habilidadesIguais.length / vaga.softSkills.length) * 100);
 
+      const aprovadoSoft = porcentagemSoft >= 70 ? true : false;
+
     console.log(
-      `${candidato.nome} possui ${porcentagemSoft}% de compatibilidade em SoftSkills com a empresa ${vaga.empresa}`
+      `${candidato.nome} possui ${porcentagemSoft}% de compatibilidade em SoftSkills com a empresa ${vaga.empresa}, candidato ${aprovadoSoft ? "aprovado" : "reprovado"} para a entrevista da vaga de ${vaga.cargo}`
     );
 
   });
@@ -410,6 +426,8 @@ const calcularCompatibilidade = (candidato) => {
 calcularCompatibilidade(candidato1);
 calcularCompatibilidade(candidato2);
 calcularCompatibilidade(candidato3);
+
+
 
   
 
