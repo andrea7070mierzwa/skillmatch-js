@@ -35,10 +35,10 @@ vagas.push(
   new Vaga(
     "Empresa A",
     "Frontend Developer Junior",
-
-    ["Adaptabilidade", 
-      "Liderança", 
-      "Inteligência emocional"
+    [
+      "Adaptabilidade",
+      "Liderança",
+      "Inteligência emocional",
     ],
     [
       "Manipulação de DOM",
@@ -60,8 +60,16 @@ vagas.push(
   new Vaga(
     "Empresa B",
     "Frontend Developer Junior",
-    ["Ética profissional", "Comprometimento", "Aprendizagem contínua"],
-    ["Consumo de API", "Async/Await", "Promises"],
+    [
+      "Ética profissional",
+      "Comprometimento",
+      "Aprendizagem contínua",
+    ],
+    [
+      "Consumo de API",
+      "Async/Await",
+      "Promises",
+    ],
     3200,
     "Presencial",
     "Junior",
@@ -74,8 +82,17 @@ vagas.push(
   new Vaga(
     "Empresa C",
     "Frontend Developer Junior",
-    ["Pensamento crítico", "Criatividade", "Resolução de problemas"],
-    ["Terminal Linux", "NPM", "Deploy", "Arquitetura cliente-servidor"],
+    [
+      "Pensamento crítico",
+      "Criatividade",
+      "Resolução de problemas",
+    ],
+    [
+      "Terminal Linux",
+      "NPM",
+      "Deploy",
+      "Arquitetura cliente-servidor",
+    ],
     2800,
     "Remoto",
     "Junior",
@@ -86,14 +103,21 @@ vagas.push(
 
 console.log("Vagas Disponíveis:", vagas);
 
-//Criação da classe Candidato que receberá as informações do candidato para realizar o match.
+//Criação da classe Pessoa para utilização de Herança.
 
-class CandidatoFrontEnd {
-  constructor(nome, email, telefone, habilidades, requisitos) {
-
+class Pessoa {
+  constructor(nome, email, telefone) {
     this.nome = nome;
     this.email = email;
     this.telefone = telefone;
+  }
+}
+
+//Criação da classe Candidato que receberá as informações do candidato para realizar o match.
+
+class CandidatoFrontEnd extends Pessoa {
+  constructor(nome, email, telefone, habilidades, requisitos) {
+    super(nome, email, telefone);
 
     this.softSkills = habilidades;
     this.hardSkills = requisitos;
@@ -133,8 +157,6 @@ const candidato1 = new CandidatoFrontEnd(
   ],
 );
 
-console.log("Candidato:", candidato1);
-
 const candidato2 = new CandidatoFrontEnd(
   "Maria Souza",
   "maria@casadabruxa.com",
@@ -158,8 +180,6 @@ const candidato2 = new CandidatoFrontEnd(
   ],
 );
 
-console.log("Candidato:", candidato2);
-
 const candidato3 = new CandidatoFrontEnd(
   "Carlos Oliveira",
   "oliveira@bananeira.com",
@@ -172,71 +192,138 @@ const candidato3 = new CandidatoFrontEnd(
     "Flexibilidade",
     "Resiliência",
   ],
-  ["HTML", "CSS", "JavaScript", "React"],
+  [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+  ],
 );
 
+console.log("Candidato:", candidato1);
+console.log("Candidato:", candidato2);
 console.log("Candidato:", candidato3);
 
 //Função para realizar o match entre o candidato e as vagas disponíveis.
 
 const calcularCompatibilidade = (candidato) => {
   vagas.forEach((vaga) => {
+
     //Compatibilidade HardSkills
 
     const requisitosIguais = vaga.hardSkills.filter((skill) =>
-      candidato.hardSkills.includes(skill),
+      candidato.hardSkills.includes(skill)
     );
 
     const porcentagemHard = Math.round(
-      (requisitosIguais.length / vaga.hardSkills.length) * 100,
+      (requisitosIguais.length / vaga.hardSkills.length) * 100
     );
 
-    const aprovadoHard = porcentagemHard >= 70 ? true : false;
-
-    console.log(
-      `${candidato.nome} possui ${porcentagemHard}% de compatibilidade em HardSkills com a empresa ${vaga.empresa}, candidato ${aprovadoHard ? "aprovado" : "reprovado"} para a entrevista da vaga de ${vaga.cargo}`,
-    );
-
-    //Classificação e Recomendações para o candidato e empresa com base na compatibilidade calculada.
-
-     const hardSkillsFaltantes = vaga.hardSkills.filter(
-      (skill) => !candidato.hardSkills.includes(skill),
-    );
-
-       //Compatibilidade SoftSkills
+    //Compatibilidade SoftSkills
 
     const habilidadesIguais = vaga.softSkills.filter((skill) =>
-      candidato.softSkills.includes(skill),
+      candidato.softSkills.includes(skill)
     );
 
     const porcentagemSoft = Math.round(
-      (habilidadesIguais.length / vaga.softSkills.length) * 100,
+      (habilidadesIguais.length / vaga.softSkills.length) * 100
     );
 
-    const aprovadoSoft = porcentagemSoft >= 70 ? true : false;
+    //Habilidades faltantes
 
-      const softSkillsFaltantes = vaga.softSkills.filter(
-      (skill) => !candidato.softSkills.includes(skill),
+    const hardSkillsFaltantes = vaga.hardSkills.filter(
+      (skill) => !candidato.hardSkills.includes(skill)
     );
 
-    console.log(
-      `Para a empresa: ${candidato.nome} possui ${porcentagemSoft}% de compatibilidade em SoftSkills com a empresa ${vaga.empresa}, candidato ${aprovadoSoft ? "aprovado" : "reprovado"} para a entrevista da vaga de ${vaga.cargo}`,
+    const softSkillsFaltantes = vaga.softSkills.filter(
+      (skill) => !candidato.softSkills.includes(skill)
     );
 
-    console.log(
-      `Feedback ao candidato: desenvolva ${softSkillsFaltantes.join(", ")} para aumentar sua compatibilidade com a vaga ${vaga.cargo}.`,
-    );
+    //Booleanos de aprovação
 
-     console.log(
-      `Para a empresa: ${candidato.nome} tem ${porcentagemHard}% em HardSkills e ${porcentagemSoft}% em SoftSkills. Faltam HardSkills: ${hardSkillsFaltantes.join(", ")}. Faltam SoftSkills: ${softSkillsFaltantes.join(", ")}.`,
-    );
+    const aprovadoHard =
+      porcentagemHard >= vaga.minHardSkills;
 
-    console.log(
-      `Feedback ao candidato: desenvolva ${hardSkillsFaltantes.join(", ")} para aumentar sua compatibilidade com a vaga ${vaga.cargo}.`,
-    );
+    const aprovadoSoft =
+      porcentagemSoft >= vaga.minSoftSkills;
+
+    const aprovadoGeral =
+      aprovadoHard && aprovadoSoft;
+
+    //Classificação de compatibilidade
+
+    let classificacao = "";
+
+    if (porcentagemHard >= 80 || porcentagemSoft >= 80) {
+      classificacao = "Alta compatibilidade";
+    } else if (porcentagemHard >= 50 || porcentagemSoft >= 50) {
+      classificacao = "Média compatibilidade";
+    } else {
+      classificacao = "Baixa compatibilidade";
+    }
+
+    //Relatório final
+
+    console.log(`
+========================================
+ANÁLISE DE COMPATIBILIDADE
+========================================
+
+Candidato: ${candidato.nome}
+Empresa: ${vaga.empresa}
+Vaga: ${vaga.cargo}
+
+HardSkills: ${porcentagemHard}% - ${aprovadoHard ? "aprovado" : "reprovado"}
+
+SoftSkills: ${porcentagemSoft}% - ${aprovadoSoft ? "aprovado" : "reprovado"}
+
+Classificação: ${classificacao}
+
+Status Geral:
+${aprovadoGeral ? "APROVADO PARA ENTREVISTA" : "NÃO APROVADO NESTA VAGA"}
+
+Faltam HardSkills:
+${hardSkillsFaltantes.length > 0 ? hardSkillsFaltantes.join(", ") : "Nenhuma"}
+
+Faltam SoftSkills:
+${softSkillsFaltantes.length > 0 ? softSkillsFaltantes.join(", ") : "Nenhuma"}
+
+Recomendação:
+${
+  hardSkillsFaltantes.length > 0 ||
+  softSkillsFaltantes.length > 0
+    ? `Desenvolver ${[
+        ...hardSkillsFaltantes,
+        ...softSkillsFaltantes,
+      ].join(", ")}.`
+    : "Perfil completo para esta vaga."
+}
+
+========================================
+`);
   });
 };
 
-calcularCompatibilidade(candidato1);
-calcularCompatibilidade(candidato2);
-calcularCompatibilidade(candidato3);
+//Promise para simular carregamento de vagas.
+
+const buscarVagas = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(vagas);
+    }, 2000);
+  });
+};
+
+//Async/Await para execução do sistema.
+
+const executarSistema = async () => {
+  const vagasDisponiveis = await buscarVagas();
+
+  console.log("Sistema carregado:", vagasDisponiveis);
+
+  calcularCompatibilidade(candidato1);
+  calcularCompatibilidade(candidato2);
+  calcularCompatibilidade(candidato3);
+};
+
+executarSistema();
