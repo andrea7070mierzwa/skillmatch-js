@@ -1,8 +1,5 @@
 //Criação do mini-projeto avaliativo para o curso de desenvolvedor Frontend React do SCTEC | SENAI
 
-
-
-
 //Criação da classe Vaga que receberá as informações da vaga e do candidato para realizar o match.
 
 class Vaga {
@@ -93,32 +90,13 @@ console.log("Vagas Disponíveis:", vagas);
 
 class CandidatoFrontEnd {
   constructor(nome, email, telefone, habilidades, requisitos) {
-    
+
     this.nome = nome;
     this.email = email;
     this.telefone = telefone;
+
     this.softSkills = habilidades;
     this.hardSkills = requisitos;
-
-    if (
-      this.softSkills.every((skill) =>
-        vagas.softSkills.includes(skill),
-      )
-    ) {
-      this.matchSoftSkills = true;
-    } else {
-      this.matchSoftSkills = false;
-    }
-
-    if (
-      this.hardSkills.every((skill) =>
-        vagas.hardSkills.includes(skill),
-      )
-    ) {
-      this.matchHardSkills = true;
-    } else {
-      this.matchHardSkills = false;
-    }
   }
 }
 
@@ -221,23 +199,11 @@ const calcularCompatibilidade = (candidato) => {
 
     //Classificação e Recomendações para o candidato e empresa com base na compatibilidade calculada.
 
-   
-
-  
-
      const hardSkillsFaltantes = vaga.hardSkills.filter(
       (skill) => !candidato.hardSkills.includes(skill),
     );
 
-    console.log(
-      `Para a empresa: ${candidato.nome} tem ${porcentagemHard}% em HardSkills e ${porcentagemSoft}% em SoftSkills. Faltam HardSkills: ${hardSkillsFaltantes.join(", ")}. Faltam SoftSkills: ${softSkillsFaltantes.join(", ")}.`,
-    );
-
-    console.log(
-      `Feedback ao candidato: desenvolva ${hardSkillsFaltantes.join(", ")} para aumentar sua compatibilidade com a vaga ${vaga.cargo}.`,
-    );
-
-    //Compatibilidade SoftSkills
+       //Compatibilidade SoftSkills
 
     const habilidadesIguais = vaga.softSkills.filter((skill) =>
       candidato.softSkills.includes(skill),
@@ -254,11 +220,19 @@ const calcularCompatibilidade = (candidato) => {
     );
 
     console.log(
-      `Para a empresA: ${candidato.nome} possui ${porcentagemSoft}% de compatibilidade em SoftSkills com a empresa ${vaga.empresa}, candidato ${aprovadoSoft ? "aprovado" : "reprovado"} para a entrevista da vaga de ${vaga.cargo}`,
+      `Para a empresa: ${candidato.nome} possui ${porcentagemSoft}% de compatibilidade em SoftSkills com a empresa ${vaga.empresa}, candidato ${aprovadoSoft ? "aprovado" : "reprovado"} para a entrevista da vaga de ${vaga.cargo}`,
     );
 
     console.log(
       `Feedback ao candidato: desenvolva ${softSkillsFaltantes.join(", ")} para aumentar sua compatibilidade com a vaga ${vaga.cargo}.`,
+    );
+
+     console.log(
+      `Para a empresa: ${candidato.nome} tem ${porcentagemHard}% em HardSkills e ${porcentagemSoft}% em SoftSkills. Faltam HardSkills: ${hardSkillsFaltantes.join(", ")}. Faltam SoftSkills: ${softSkillsFaltantes.join(", ")}.`,
+    );
+
+    console.log(
+      `Feedback ao candidato: desenvolva ${hardSkillsFaltantes.join(", ")} para aumentar sua compatibilidade com a vaga ${vaga.cargo}.`,
     );
   });
 };
