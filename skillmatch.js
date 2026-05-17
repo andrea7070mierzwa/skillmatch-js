@@ -72,48 +72,19 @@ class Vaga {
   }
 }
 
-class VagaFrontEnd extends Vaga {
-  constructor(
-    empresa,
-    cargo,
-    habilidades,
-    requisitos,
-    salario,
-    modalidade,
-    nivel,
-    minSoftSkills,
-    minHardSkills,
-  ) {
-    super(
-      empresa,
-      cargo,
-      habilidades,
-      requisitos,
-      salario,
-      modalidade,
-      nivel,
-      minSoftSkills,
-      minHardSkills,
-    );
-    this.area = "Front-End";
-  }
-}
-
 //Construir as vagas com arrays para armazenar várias vagas e candidatos,
 //e criar funções para realizar o match entre eles.
 
 const vagas = [];
 
-vagas.push(vagaFrontEnd);
-
 vagas.push(
-  new VagaFrontEnd(
+  new Vaga(
     "Empresa A",
     "Frontend Developer Junior",
-    [
-      "Adaptabilidade",
-      "Liderança",
-      "Inteligência emocional",
+
+    ["Adaptabilidade", 
+      "Liderança", 
+      "Inteligência emocional"
     ],
     [
       "Manipulação de DOM",
@@ -132,19 +103,11 @@ vagas.push(
 );
 
 vagas.push(
-  new VagaFrontEnd(
+  new Vaga(
     "Empresa B",
     "Frontend Developer Junior",
-    [
-      "Ética profissional",
-      "Comprometimento",
-      "Aprendizagem contínua",
-    ],
-    [
-      "Consumo de API",
-      "Async/Await",
-      "Promises",
-    ],
+    ["Ética profissional", "Comprometimento", "Aprendizagem contínua"],
+    ["Consumo de API", "Async/Await", "Promises"],
     3200,
     "Presencial",
     "Junior",
@@ -154,20 +117,11 @@ vagas.push(
 );
 
 vagas.push(
-  new VagaFrontEnd(
+  new Vaga(
     "Empresa C",
     "Frontend Developer Junior",
-    [
-      "Pensamento crítico",
-      "Criatividade",
-      "Resolução de problemas",
-    ],
-    [
-      "Terminal Linux",
-      "NPM",
-      "Deploy",
-      "Arquitetura cliente-servidor",
-    ],
+    ["Pensamento crítico", "Criatividade", "Resolução de problemas"],
+    ["Terminal Linux", "NPM", "Deploy", "Arquitetura cliente-servidor"],
     2800,
     "Remoto",
     "Junior",
