@@ -230,7 +230,7 @@ vagas.push(
     ],
     3200,
     "Presencial",
-    "Junior"
+    "Junior",
     75,
     65
   )
@@ -262,9 +262,9 @@ vagas.push(
       "Manipulação de DOM",
       "Versionamento de código"
     ],
-    2800,
+      2800,
     "Remoto",
-    "Junior"
+    "Junior",
     60,
     60
   )
@@ -420,6 +420,24 @@ const calcularCompatibilidade = (candidato) => {
     );
 
   });
+
+  //Classificação e Recomendações para o candidato e empresa com base na compatibilidade calculada.
+  
+  const hardSkillsFaltantes = vaga.hardSkills.filter(skill =>
+  !candidato.hardSkills.includes(skill)
+);
+
+const softSkillsFaltantes = vaga.softSkills.filter(skill =>
+  !candidato.softSkills.includes(skill)
+);
+
+console.log(
+  `Para a empresa: ${candidato.nome} tem ${porcentagemHard}% em HardSkills e ${porcentagemSoft}% em SoftSkills. Faltam HardSkills: ${hardSkillsFaltantes.join(", ")}. Faltam SoftSkills: ${softSkillsFaltantes.join(", ")}.`
+);
+
+console.log(
+  `Feedback ao candidato: desenvolva ${hardSkillsFaltantes.join(", ")} para aumentar sua compatibilidade com a vaga ${vaga.cargo}.`
+);
 
 };
 
