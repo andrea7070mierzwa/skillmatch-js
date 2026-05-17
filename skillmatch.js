@@ -375,17 +375,19 @@ console.log("Candidato:", candidato3);
 
 const calcularCompatibilidade = (candidato) => {
   vagas.forEach(vaga => {
-
     const habilidadesIguais = vaga.hardSkills.filter(skill =>
       candidato.hardSkills.includes(skill)
     );
 
-    const porcentagem =
-      (habilidadesIguais.length / vaga.hardSkills.length) * 100;
+   const porcentagem =
+  Math.round((habilidadesIguais.length / vaga.hardSkills.length) * 100);
+  
 
-    console.log(
-      `${candidato.nome} possui ${porcentagem}% de compatibilidade com a empresa ${vaga.empresa}`
-    );
-
+console.log(
+  `${candidato.nome} possui ${porcentagem}% de compatibilidade com a empresa ${vaga.empresa}`
+);
   });
-};
+}
+  
+
+
