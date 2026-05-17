@@ -374,20 +374,43 @@ console.log("Candidato:", candidato3);
 //Função para realizar o match entre o candidato e as vagas disponíveis.
 
 const calcularCompatibilidade = (candidato) => {
+
   vagas.forEach(vaga => {
-    const habilidadesIguais = vaga.hardSkills.filter(skill =>
+
+    //Compatibilidade HardSkills
+
+    const requisitosIguais = vaga.hardSkills.filter(skill =>
       candidato.hardSkills.includes(skill)
     );
 
-   const porcentagem =
-  Math.round((habilidadesIguais.length / vaga.hardSkills.length) * 100);
-  
+    const porcentagemHard =
+      Math.round((requisitosIguais.length / vaga.hardSkills.length) * 100);
 
-console.log(
-  `${candidato.nome} possui ${porcentagem}% de compatibilidade com a empresa ${vaga.empresa}`
-);
+    console.log(
+      `${candidato.nome} possui ${porcentagemHard}% de compatibilidade em HardSkills com a empresa ${vaga.empresa}`
+    );
+
+    //Compatibilidade SoftSkills
+
+    const habilidadesIguais = vaga.softSkills.filter(skill =>
+      candidato.softSkills.includes(skill)
+    );
+
+    const porcentagemSoft =
+      Math.round((habilidadesIguais.length / vaga.softSkills.length) * 100);
+
+    console.log(
+      `${candidato.nome} possui ${porcentagemSoft}% de compatibilidade em SoftSkills com a empresa ${vaga.empresa}`
+    );
+
   });
-}
+
+};
+
+calcularCompatibilidade(candidato1);
+calcularCompatibilidade(candidato2);
+calcularCompatibilidade(candidato3);
+
   
 
 
