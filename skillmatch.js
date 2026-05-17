@@ -134,10 +134,9 @@ console.log("Vagas Disponíveis:", vagas);
 
 //Criação da classe Candidato que receberá as informações do candidato para realizar o match.
 
-class CandidatoFrontEnd extends FrontendJunior {
+class CandidatoFrontEnd {
   constructor(nome, email, telefone, habilidades, requisitos) {
-    super();
-
+    
     this.nome = nome;
     this.email = email;
     this.telefone = telefone;
