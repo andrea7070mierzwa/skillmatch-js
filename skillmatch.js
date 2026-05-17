@@ -370,3 +370,22 @@ const candidato3 = new CandidatoFrontEnd(
 );
 
 console.log("Candidato:", candidato3);
+
+//Função para realizar o match entre o candidato e as vagas disponíveis.
+
+const calcularCompatibilidade = (candidato) => {
+  vagas.forEach(vaga => {
+
+    const habilidadesIguais = vaga.hardSkills.filter(skill =>
+      candidato.hardSkills.includes(skill)
+    );
+
+    const porcentagem =
+      (habilidadesIguais.length / vaga.hardSkills.length) * 100;
+
+    console.log(
+      `${candidato.nome} possui ${porcentagem}% de compatibilidade com a empresa ${vaga.empresa}`
+    );
+
+  });
+};
