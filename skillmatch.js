@@ -1,50 +1,7 @@
 //Criação do mini-projeto avaliativo para o curso de desenvolvedor Frontend React do SCTEC | SENAI
 
-//Criação da classe FrontendJunior
 
-class FrontendJunior extends SoftSkills {
-  constructor() {
-    super();
 
-    this.softSkills = [
-      "Trabalho em equipe",
-      "Comunicação",
-      "Proatividade",
-      "Responsabilidade",
-      "Organização",
-      "Gestão do tempo",
-      "Colaboração",
-      "Empatia",
-      "Autonomia",
-      "Disciplina",
-      "Inovação",
-    ];
-
-    this.hardSkills = [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Git",
-      "GitHub",
-      "Lógica de programação",
-      "Algoritmos",
-      "Métodos de Array",
-      "POO",
-      "Banco de Dados",
-      "SQL",
-      "Firebase",
-      "Debugging",
-      "VS Code",
-      "Kanban",
-      "Testes básicos",
-    ];
-  }
-}
-
-const frontendJunior = new FrontendJunior();
-
-console.log("Frontend Junior:", frontendJunior);
 
 //Criação da classe Vaga que receberá as informações da vaga e do candidato para realizar o match.
 
@@ -145,7 +102,7 @@ class CandidatoFrontEnd {
 
     if (
       this.softSkills.every((skill) =>
-        frontendJunior.softSkills.includes(skill),
+        vagas.softSkills.includes(skill),
       )
     ) {
       this.matchSoftSkills = true;
@@ -155,7 +112,7 @@ class CandidatoFrontEnd {
 
     if (
       this.hardSkills.every((skill) =>
-        frontendJunior.hardSkills.includes(skill),
+        vagas.hardSkills.includes(skill),
       )
     ) {
       this.matchHardSkills = true;
@@ -264,12 +221,12 @@ const calcularCompatibilidade = (candidato) => {
 
     //Classificação e Recomendações para o candidato e empresa com base na compatibilidade calculada.
 
-    const hardSkillsFaltantes = vaga.hardSkills.filter(
-      (skill) => !candidato.hardSkills.includes(skill),
-    );
+   
 
-    const softSkillsFaltantes = vaga.softSkills.filter(
-      (skill) => !candidato.softSkills.includes(skill),
+  
+
+     const hardSkillsFaltantes = vaga.hardSkills.filter(
+      (skill) => !candidato.hardSkills.includes(skill),
     );
 
     console.log(
@@ -292,8 +249,16 @@ const calcularCompatibilidade = (candidato) => {
 
     const aprovadoSoft = porcentagemSoft >= 70 ? true : false;
 
+      const softSkillsFaltantes = vaga.softSkills.filter(
+      (skill) => !candidato.softSkills.includes(skill),
+    );
+
     console.log(
-      `${candidato.nome} possui ${porcentagemSoft}% de compatibilidade em SoftSkills com a empresa ${vaga.empresa}, candidato ${aprovadoSoft ? "aprovado" : "reprovado"} para a entrevista da vaga de ${vaga.cargo}`,
+      `Para a empresA: ${candidato.nome} possui ${porcentagemSoft}% de compatibilidade em SoftSkills com a empresa ${vaga.empresa}, candidato ${aprovadoSoft ? "aprovado" : "reprovado"} para a entrevista da vaga de ${vaga.cargo}`,
+    );
+
+    console.log(
+      `Feedback ao candidato: desenvolva ${softSkillsFaltantes.join(", ")} para aumentar sua compatibilidade com a vaga ${vaga.cargo}.`,
     );
   });
 };
