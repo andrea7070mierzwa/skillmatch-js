@@ -36,17 +36,53 @@ vagas.push(
     "Empresa A",
     "Frontend Developer Junior",
     [
+      "Trabalho em equipe",
+      "Comunicação",
+      "Proatividade",
+      "Responsabilidade",
+      "Organização",
+      "Pensamento crítico",
+      "Criatividade",
+      "Resolução de problemas",
       "Adaptabilidade",
       "Liderança",
       "Inteligência emocional",
+      "Ética profissional",
+      "Comprometimento",
+      "Aprendizagem contínua",
+      "Gestão do tempo",
+      "Colaboração",
+      "Empatia",
+      "Autonomia",
     ],
     [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Git",
+      "GitHub",
+      "Lógica de programação",
+      "Algoritmos",
+      "Consumo de API",
       "Manipulação de DOM",
       "Versionamento de código",
       "Responsividade",
       "Flexbox",
       "CSS Grid",
       "JSON",
+      "Async/Await",
+      "Promises",
+      "Métodos de Array",
+      "POO",
+      "Firebase",
+      "Debugging",
+      "VS Code",
+      "Terminal Linux",
+      "NPM",
+      "Deploy",
+      "Kanban",
+      "Testes básicos",
     ],
     3500,
     "Híbrido",
@@ -61,14 +97,43 @@ vagas.push(
     "Empresa B",
     "Frontend Developer Junior",
     [
+      "Trabalho em equipe",
+      "Comunicação",
+      "Proatividade",
+      "Responsabilidade",
+      "Organização",
+      "Pensamento crítico",
+      "Liderança",
+      "Inteligência emocional",
       "Ética profissional",
       "Comprometimento",
       "Aprendizagem contínua",
+      "Gestão do tempo",
+      "Colaboração",
+      "Empatia",
+      "Autonomia",
     ],
     [
-      "Consumo de API",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Git",
+      "GitHub",
+      "Versionamento de código",
+      "Responsividade",
+      "Flexbox",
+      "CSS Grid",
+      "JSON",
       "Async/Await",
       "Promises",
+      "Métodos de Array",
+      "POO",
+      "Banco de Dados",
+      "SQL",
+      "Firebase",
+      "Debugging",
+      "VS Code",
     ],
     3200,
     "Presencial",
@@ -83,15 +148,51 @@ vagas.push(
     "Empresa C",
     "Frontend Developer Junior",
     [
+      "Trabalho em equipe",
+      "Comunicação",
+      "Proatividade",
+      "Responsabilidade",
+      "Organização",
       "Pensamento crítico",
-      "Criatividade",
-      "Resolução de problemas",
+      "Inteligência emocional",
+      "Ética profissional",
+      "Comprometimento",
+      "Aprendizagem contínua",
+      "Gestão do tempo",
+      "Colaboração",
+      "Empatia",
+      "Autonomia",
+      "Disciplina",
+      "Inovação",
+      "Flexibilidade",
+      "Resiliência",
+      "Pontualidade",
     ],
     [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Git",
+      "GitHub",
+      "Lógica de programação",
+      "Algoritmos",
+      "Consumo de API",
+      "Manipulação de DOM",
+      "Versionamento de código",
+      "Responsividade",
+      "Flexbox",
+      "CSS Grid",
+      "JSON",
+      "Async/Await",
+      "Promises",
+      "VS Code",
       "Terminal Linux",
       "NPM",
       "Deploy",
       "Arquitetura cliente-servidor",
+      "Kanban",
+      "Testes básicos",
     ],
     2800,
     "Remoto",
@@ -132,16 +233,20 @@ const candidato1 = new CandidatoFrontEnd(
   "joao@qualquercoisa.com",
   "11999999999",
   [
+    "Comunicação",
+    "Proatividade",
     "Responsabilidade",
     "Organização",
-    "Comunicação",
-    "Trabalho em equipe",
-    "Proatividade",
-    "Pontualidade",
-    "Aprendizagem rápida",
-    "Flexibilidade",
-    "Resiliência",
+    "Pensamento crítico",
+    "Inteligência emocional",
     "Ética profissional",
+    "Comprometimento",
+    "Aprendizagem contínua",
+    "Gestão do tempo",
+    "Colaboração",
+    "Empatia",
+    "Autonomia",
+    "Disciplina",
   ],
   [
     "HTML",
@@ -150,10 +255,24 @@ const candidato1 = new CandidatoFrontEnd(
     "React",
     "Git",
     "GitHub",
-    "Responsividade",
+    "Lógica de programação",
+    "Algoritmos",
     "Consumo de API",
     "Manipulação de DOM",
     "Versionamento de código",
+    "Responsividade",
+    "Flexbox",
+    "CSS Grid",
+    "JSON",
+    "Async/Await",
+    "Promises",
+    "VS Code",
+    "Terminal Linux",
+    "NPM",
+    "Deploy",
+    "Arquitetura cliente-servidor",
+    "Kanban",
+    "Testes básicos",
   ],
 );
 
@@ -168,6 +287,15 @@ const candidato2 = new CandidatoFrontEnd(
     "Aprendizagem rápida",
     "Flexibilidade",
     "Ética profissional",
+    "Gestão do tempo",
+    "Colaboração",
+    "Empatia",
+    "Autonomia",
+    "Disciplina",
+    "Inovação",
+    "Flexibilidade",
+    "Resiliência",
+    "Pontualidade",
   ],
   [
     "HTML",
@@ -177,6 +305,13 @@ const candidato2 = new CandidatoFrontEnd(
     "Git",
     "Responsividade",
     "Consumo de API",
+    "VS Code",
+    "Terminal Linux",
+    "NPM",
+    "Deploy",
+    "Arquitetura cliente-servidor",
+    "Kanban",
+    "Testes básicos",
   ],
 );
 
@@ -191,12 +326,28 @@ const candidato3 = new CandidatoFrontEnd(
     "Aprendizagem rápida",
     "Flexibilidade",
     "Resiliência",
+    "Gestão do tempo",
+    "Colaboração",
+    "Empatia",
+    "Autonomia",
+    "Disciplina",
   ],
   [
     "HTML",
     "CSS",
     "JavaScript",
     "React",
+    "CSS Grid",
+    "JSON",
+    "Async/Await",
+    "Promises",
+    "VS Code",
+    "Terminal Linux",
+    "NPM",
+    "Deploy",
+    "Arquitetura cliente-servidor",
+    "Kanban",
+    "Testes básicos",
   ],
 );
 
@@ -207,48 +358,58 @@ console.log("Candidato:", candidato3);
 //Função para realizar o match entre o candidato e as vagas disponíveis.
 
 const calcularCompatibilidade = (candidato) => {
-  vagas.forEach((vaga) => {
+  // Calcular maior compatibilidade entre hard skills e soft skills para classificação final
 
+  let melhorVaga = null;
+  let maiorCompatibilidade = 0;
+
+  vagas.forEach((vaga) => {
     //Compatibilidade HardSkills
 
     const requisitosIguais = vaga.hardSkills.filter((skill) =>
-      candidato.hardSkills.includes(skill)
+      candidato.hardSkills.includes(skill),
     );
 
     const porcentagemHard = Math.round(
-      (requisitosIguais.length / vaga.hardSkills.length) * 100
+      (requisitosIguais.length / vaga.hardSkills.length) * 100,
     );
 
     //Compatibilidade SoftSkills
 
     const habilidadesIguais = vaga.softSkills.filter((skill) =>
-      candidato.softSkills.includes(skill)
+      candidato.softSkills.includes(skill),
     );
 
     const porcentagemSoft = Math.round(
-      (habilidadesIguais.length / vaga.softSkills.length) * 100
+      (habilidadesIguais.length / vaga.softSkills.length) * 100,
     );
+
+    const compatibilidadeGeral = Math.round(
+      (porcentagemHard + porcentagemSoft) / 2,
+    );
+
+    if (compatibilidadeGeral > maiorCompatibilidade) {
+      maiorCompatibilidade = compatibilidadeGeral;
+      melhorVaga = vaga;
+    }
 
     //Habilidades faltantes
 
     const hardSkillsFaltantes = vaga.hardSkills.filter(
-      (skill) => !candidato.hardSkills.includes(skill)
+      (skill) => !candidato.hardSkills.includes(skill),
     );
 
     const softSkillsFaltantes = vaga.softSkills.filter(
-      (skill) => !candidato.softSkills.includes(skill)
+      (skill) => !candidato.softSkills.includes(skill),
     );
 
     //Booleanos de aprovação
 
-    const aprovadoHard =
-      porcentagemHard >= vaga.minHardSkills;
+    const aprovadoHard = porcentagemHard >= vaga.minHardSkills;
 
-    const aprovadoSoft =
-      porcentagemSoft >= vaga.minSoftSkills;
+    const aprovadoSoft = porcentagemSoft >= vaga.minSoftSkills;
 
-    const aprovadoGeral =
-      aprovadoHard && aprovadoSoft;
+    const aprovadoGeral = aprovadoHard && aprovadoSoft;
 
     //Classificação de compatibilidade
 
@@ -263,6 +424,16 @@ const calcularCompatibilidade = (candidato) => {
     }
 
     //Relatório final
+
+    console.log(`
+🏆 MELHOR MATCH PARA ${candidato.nome}
+
+Empresa: ${melhorVaga.empresa}
+Vaga: ${melhorVaga.cargo}
+
+Compatibilidade Geral:
+${maiorCompatibilidade}%
+`);
 
     console.log(`
 ========================================
@@ -290,14 +461,13 @@ ${softSkillsFaltantes.length > 0 ? softSkillsFaltantes.join(", ") : "Nenhuma"}
 
 Recomendação:
 ${
-  hardSkillsFaltantes.length > 0 ||
-  softSkillsFaltantes.length > 0
-    ? `Desenvolver ${[
-        ...hardSkillsFaltantes,
-        ...softSkillsFaltantes,
-      ].join(", ")}.`
+  hardSkillsFaltantes.length > 0 || softSkillsFaltantes.length > 0
+    ? `Desenvolver ${[...hardSkillsFaltantes, ...softSkillsFaltantes].join(
+        ", ",
+      )}.`
     : "Perfil completo para esta vaga."
 }
+
 
 ========================================
 `);
