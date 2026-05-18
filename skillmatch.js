@@ -355,6 +355,18 @@ console.log("Candidato:", candidato1);
 console.log("Candidato:", candidato2);
 console.log("Candidato:", candidato3);
 
+//Closure para contar quantas análises foram realizadas.
+
+const criarContadorAnalises = () => {
+  let totalAnalises = 0;
+
+  return () => {
+    totalAnalises++;
+    return totalAnalises;
+  };
+};
+
+const contadorAnalises = criarContadorAnalises();
 //Função para realizar o match entre o candidato e as vagas disponíveis.
 
 const calcularCompatibilidade = (candidato) => {
@@ -392,6 +404,7 @@ const calcularCompatibilidade = (candidato) => {
       maiorCompatibilidade = compatibilidadeGeral;
       melhorVaga = vaga;
     }
+    
 
     //Habilidades faltantes
 
@@ -425,15 +438,6 @@ const calcularCompatibilidade = (candidato) => {
 
     //Relatório final
 
-    console.log(`
-🏆 MELHOR MATCH PARA ${candidato.nome}
-
-Empresa: ${melhorVaga.empresa}
-Vaga: ${melhorVaga.cargo}
-
-Compatibilidade Geral:
-${maiorCompatibilidade}%
-`);
 
     console.log(`
 ========================================
@@ -468,10 +472,22 @@ ${
     : "Perfil completo para esta vaga."
 }
 
-
+Análise número: ${contadorAnalises()}
 ========================================
 `);
   });
+
+
+console.log(`
+🏆 MELHOR MATCH PARA ${candidato.nome}
+
+Empresa: ${melhorVaga.empresa}
+Vaga: ${melhorVaga.cargo}
+
+Compatibilidade Geral:
+${maiorCompatibilidade}%
+`);
+
 };
 
 //Promise para simular carregamento de vagas.
@@ -497,3 +513,13 @@ const executarSistema = async () => {
 };
 
 executarSistema();
+
+//Callback para exibir mensagem final do sistema.
+
+const finalizarSistema = (callback) => {
+  callback();
+};
+
+finalizarSistema(() => {
+  console.log("Sistema finalizado com sucesso!");
+});
